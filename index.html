@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Calc Overtime</title>
+</head>
+<body>
+  <div class="container">
+    <h1>
+      Calc Overtime
+    </h1>
+    <div class="nice-wrap">
+      <input class="nice-textbox" type="text" id="start-input"/>
+      <label class="nice-label" id="start-label">start</label>
+    </div>
+    <div class="nice-wrap">
+      <input class="nice-textbox" type="text" id="end-input"/>
+      <label class="nice-label" id="end-label">end</label>
+    </div>
+    <div class="nice-wrap">
+      <input class="nice-textbox" type="text" id="over-input" autofocus/>
+      <label class="nice-label" id="over-label">over</label>
+    </div>
+    <div class="nice-wrap">
+      <input class="nice-textbox" type="text" id="result-input" readonly/>
+      <label class="nice-label" id="result-label">result</label>
+    </div>
+    <div class="button-wrap">
+      <button class="nice-button" id="copy-button">copy</button>
+      <label class="copy-label" id="button-label">complete !!!</label>
+    </div>
+  </div>
+  <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
