@@ -1,3 +1,5 @@
+$phone: 414px;
+
 * {
   box-sizing: border-box;
 }
@@ -17,7 +19,7 @@ body {
     text-transform: uppercase;
     text-align: center;
     font-size: 50px;
-    @media screen and(max-width: 376px) {
+    @media screen and(max-width: $phone) {
       font-size: 35px;
     }
   }
@@ -29,7 +31,7 @@ body {
   height: 50px;
   margin: 0 auto;
 
-  @media screen and (max-width: 376px) {
+  @media screen and (max-width: $phone) {
     width: 350px;
     height: 75px;
     padding-bottom: 25px;
@@ -63,7 +65,7 @@ body {
   font-size: 16px;
   color: #a0a0a0;
   outline: none;
-  @media screen and (max-width: 376px) {
+  @media screen and (max-width: $phone) {
     width: 350px;
     margin-top: 25px;
   }
