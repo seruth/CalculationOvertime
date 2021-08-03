@@ -10,6 +10,14 @@ const copyButton = document.getElementById('copy-button')
 const buttonLabel = document.getElementById('button-label');
 const settingButton = document.getElementById('setting-btn');
 const settingContainer = document.getElementById('setting-cont');
+const startTimeInput = document.getElementById('start-time-input');
+const startTimeLabel = document.getElementById('start-time-label');
+const endTimeInput = document.getElementById('end-time-input');
+const endTimeLabel = document.getElementById('end-time-label');
+const restTime1Input = document.getElementById('rest-time1-input');
+const restTime1Label = document.getElementById('rest-time1-label');
+const restTime2Input = document.getElementById('rest-time2-input');
+const restTime2Label = document.getElementById('rest-time2-label');
 const applyButton = document.getElementById('apply-button');
 
 if (startInput.value.length > 0) {
@@ -30,13 +38,15 @@ startInput.addEventListener('blur', event => {
     startLabel.className = 'nice-label';
   } 
   else {
-    if (val.length === 3) {
-      let time = '0' + val.slice(0, 1) + ':' + val.slice(1);
-      startInput.value = time;
-    }
-    else {
-      let time = val.slice(0, 2) + ':' + val.slice(2);
-      startInput.value = time;
+    if (val.indexOf(':') < 0) {
+      if (val.length === 3) {
+        let time = '0' + val.slice(0, 1) + ':' + val.slice(1);
+        startInput.value = time;
+      }
+      else {
+        let time = val.slice(0, 2) + ':' + val.slice(2);
+        startInput.value = time;
+      }
     }
   }
 });
@@ -52,8 +62,10 @@ endInput.addEventListener('blur', event => {
     endLabel.className = 'nice-label';
   }
   else {
-    let time = val.slice(0, 2) + ':' + val.slice(2);
-    endInput.value = time;
+    if (val.indexOf(':') < 0) {
+      let time = val.slice(0, 2) + ':' + val.slice(2);
+      endInput.value = time;
+    }
   }
 });
 
@@ -68,8 +80,10 @@ overInput.addEventListener('blur', event => {
     overLabel.className = 'nice-label';
   }
   else {
-    let time = val.slice(0, 2) + ':' + val.slice(2);
-    overInput.value = time;
+    if (val.indexOf(':') < 0) {
+      let time = val.slice(0, 2) + ':' + val.slice(2);
+      overInput.value = time;
+    }
 
     let startTime = startInput.value.split(':');
     let endTime = endInput.value.split(':');
@@ -84,7 +98,9 @@ overInput.addEventListener('blur', event => {
     let min = end.diff(start, 'm');
     min -= restTime;
     let overmin = over.diff(end, 'm');
-    overmin -= restTime2;
+    if (overmin !== 0) {
+      overmin -= restTime2;
+    }
     let result = min + overmin;
     resultInput.value = ('00' + Math.floor(result / 60)).slice(-2) + ':' + ('00' + Math.floor(result % 60)).slice(-2);
   }
@@ -119,3 +135,25 @@ settingButton.addEventListener('click', () => {
   }
   flag = !flag;
 });
+
+
+// startTimeInput.addEventListener('focus', () => {
+//   startTimeLabel.className += ' focus';
+// });
+
+// startTimeInput.addEventListener('blur', event => {
+//   let val = event.currentTarget.value;
+//   if (val.length === 0) {
+//     startTimeLabel.className = 'nice-label';
+//   } 
+//   else {
+//     if (val.length === 3) {
+//       let time = '0' + val.slice(0, 1) + ':' + val.slice(1);
+//       startTimeInput.value = time;
+//     }
+//     else {
+//       let time = val.slice(0, 2) + ':' + val.slice(2);
+//       startTimeInput.value = time;
+//     }
+//   }
+// });
