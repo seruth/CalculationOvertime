@@ -8,6 +8,17 @@ const resultInput = document.getElementById('result-input');
 const resultLabel = document.getElementById('result-label');
 const copyButton = document.getElementById('copy-button')
 const buttonLabel = document.getElementById('button-label');
+const settingButton = document.getElementById('setting-btn');
+const settingContainer = document.getElementById('setting-cont');
+const applyButton = document.getElementById('apply-button');
+
+if (startInput.value.length > 0) {
+  startLabel.className += ' focus';
+}
+
+if (endInput.value.length > 0) {
+  endLabel.className += ' focus';
+}
 
 startInput.addEventListener('focus', () => {
   startLabel.className += ' focus';
@@ -95,4 +106,16 @@ copyButton.addEventListener('click', () => {
   resultInput.select();
   document.execCommand('copy');
   buttonLabel.className += ' show';
+});
+
+let flag = false
+settingButton.addEventListener('click', () => {
+  if (!flag) {
+    settingContainer.className += ' show';
+    let contentPosition = settingContainer.getBoundingClientRect();
+    window.scrollTo(0, contentPosition.top);
+  } else {
+    settingContainer.className = 'setting-container';
+  }
+  flag = !flag;
 });

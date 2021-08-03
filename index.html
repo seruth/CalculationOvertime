@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <title>Calc Overtime</title>
 </head>
@@ -13,16 +15,16 @@
       Calc Overtime
     </h1>
     <div class="nice-wrap">
-      <input class="nice-textbox" type="text" id="start-input"/>
+      <input class="nice-textbox" type="text" id="start-input" value="09:00" />
       <label class="nice-label" id="start-label">start</label>
     </div>
     <div class="nice-wrap">
-      <input class="nice-textbox" type="text" id="end-input"/>
+      <input class="nice-textbox" type="text" id="end-input" value="18:00" />
       <label class="nice-label" id="end-label">end</label>
     </div>
     <div class="nice-wrap">
       <input class="nice-textbox" type="text" id="over-input" autofocus/>
-      <label class="nice-label" id="over-label">over</label>
+      <label class="nice-label focus" id="over-label">over</label>
     </div>
     <div class="nice-wrap">
       <input class="nice-textbox" type="text" id="result-input" readonly/>
@@ -31,6 +33,34 @@
     <div class="button-wrap">
       <button class="nice-button" id="copy-button">copy</button>
       <label class="copy-label" id="button-label">complete !!!</label>
+    </div>
+    <div class="setting-wrap">
+      <button class="setting-button" id="setting-btn">
+        <span class="material-icons custome">
+          settings
+        </span>
+      </button>
+      <div class="setting-container" id="setting-cont">
+        <div class="nice-wrap">
+          <input class="nice-textbox" type="text"/>
+          <label class="nice-label">start time</label>
+        </div>
+        <div class="nice-wrap">
+          <input class="nice-textbox" type="text"/>
+          <label class="nice-label">end time</label>
+        </div>
+        <div class="nice-wrap">
+          <input class="nice-textbox" type="text"/>
+          <label class="nice-label">rest time 1</label>
+        </div>
+        <div class="nice-wrap">
+          <input class="nice-textbox" type="text"/>
+          <label class="nice-label">rest time 2</label>
+        </div>
+        <div class="button-wrap" id="apply-button">
+          <button class="nice-button">apply</button>
+        </div>
+      </div>
     </div>
   </div>
   <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>

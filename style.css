@@ -25,7 +25,7 @@ body {
   font-size: 50px;
 }
 
-@media screen and (max-width: 414px) {
+@media screen and (max-width: 415px) {
   .container h1 {
     font-size: 35px;
   }
@@ -38,7 +38,7 @@ body {
   margin: 0 auto;
 }
 
-@media screen and (max-width: 414px) {
+@media screen and (max-width: 415px) {
   .nice-wrap {
     width: 350px;
     height: 75px;
@@ -76,7 +76,7 @@ body {
   outline: none;
 }
 
-@media screen and (max-width: 414px) {
+@media screen and (max-width: 415px) {
   .nice-textbox {
     width: 350px;
     margin-top: 25px;
@@ -110,5 +110,53 @@ body {
 
 .copy-label.show {
   opacity: 100;
+}
+
+.setting-wrap {
+  margin-top: 15px;
+}
+
+.setting-button {
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50px;
+  background-color: #a1d1cc;
+  text-align: center;
+  -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.setting-button:active {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  position: relative;
+  top: 3px;
+}
+
+.material-icons {
+  font-size: 36px;
+}
+
+.material-icons.custome {
+  color: #1f5c37;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-transform: rotateZ(0deg);
+          transform: rotateZ(0deg);
+}
+
+.material-icons.custome:hover {
+  -webkit-transform: rotateZ(180deg);
+          transform: rotateZ(180deg);
+}
+
+.setting-container {
+  display: none;
+}
+
+.setting-container.show {
+  display: block;
 }
 /*# sourceMappingURL=style.css.map */
